@@ -30,11 +30,12 @@ export const RegisterPage = () => {
 
   return (
     <Container>
+      <StyledDivTittle>Welcome!</StyledDivTittle>
       <StyledForm onSubmit={handleSubmit}>
         <FormGroup>
           <TextField
             type="text"
-            placeholder="Enter you username"
+            placeholder="Username"
             value={formData.username}
             onChange={(e) => {
               setFormData((v) => ({ ...v, username: e.target.value }));
@@ -44,7 +45,7 @@ export const RegisterPage = () => {
         <FormGroup>
           <TextField
             type="text"
-            placeholder="Enter you email"
+            placeholder="Email"
             value={formData.email}
             onChange={(e) => {
               setFormData((v) => ({ ...v, email: e.target.value }));
@@ -54,7 +55,7 @@ export const RegisterPage = () => {
         <FormGroup>
           <TextField
             type="password"
-            placeholder="Enter you password"
+            placeholder="Password"
             value={formData.password}
             onChange={(e) => {
               setFormData((v) => ({ ...v, password: e.target.value }));
@@ -70,10 +71,15 @@ export const RegisterPage = () => {
 };
 
 const StyledForm = styled('form')`
-  width: 600px;
+  width: 500px;
   margin: 0 auto;
 `;
 
 const FormGroup = styled(MuiFormGroup)`
   margin-bottom: 15px;
+`;
+
+const StyledDivTittle = styled('div')`
+  font-size: 45px;
+  color: #213547;
 `;
