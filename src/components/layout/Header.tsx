@@ -1,19 +1,22 @@
 import MenuIcon from '@mui/icons-material/Menu';
 import {
-  AppBar,
   Box,
   Container,
   IconButton,
   Menu,
   MenuItem,
+  AppBar as MuiAppBar,
   Toolbar,
   Typography,
 } from '@mui/material';
 import { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../../hooks/useAuth';
 import { H1, Nav } from './HeaderStyles';
 
 export const Header: FC = () => {
+  const { username } = useAuth();
+
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -25,7 +28,7 @@ export const Header: FC = () => {
   };
 
   return (
-    <AppBar position="static">
+    <MuiAppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -101,8 +104,15 @@ export const Header: FC = () => {
               </Link>
             </Nav>
           </Box>
+          {username ? (
+            <Link to={'/cabinet'}>
+              <Typography>{username}</Typography>
+            </Link>
+          ) : (
+            <Link to={'/auth/login'}>Log In</Link>
+          )}
         </Toolbar>
       </Container>
-    </AppBar>
+    </MuiAppBar>
   );
 };
