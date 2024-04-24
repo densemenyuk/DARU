@@ -29,7 +29,7 @@ export const Header: FC = () => {
 
   return (
     <MuiAppBar position="static">
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" sx={{ backgroundColor: '#FF4500' }}>
         <Toolbar disableGutters>
           <Typography
             variant="h6"

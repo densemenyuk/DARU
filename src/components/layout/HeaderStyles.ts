@@ -19,9 +19,6 @@ export const H1 = styled('div')`
   color: #213547;
 `;
 
-// export const MuiAppBar = createTheme({
-//   palette: {
-//     primary: lime,
-//     secondary: purple,
-//   },
-// });
+export const MuiAppBar = styled('div')`
+  color: black;
+`;

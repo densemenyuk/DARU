@@ -62,7 +62,7 @@ export const RegisterPage = () => {
             }}
           />
         </FormGroup>
-        <Button type="submit" variant="contained">
+        <Button type="submit" variant="contained" sx={{ color: '#FF4500	' }}>
           Register
         </Button>
       </StyledForm>

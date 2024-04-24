@@ -5,6 +5,8 @@ export interface AuthState {
   userId: number;
   username: string;
   email: string;
+  // changeUsername: (username: string) => void;
+  // changeEmail: (email: string) => void;
   login: (data: AuthResponse) => void;
   logout: () => void;
 }

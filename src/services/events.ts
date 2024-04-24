@@ -22,7 +22,7 @@ export const getEvents = (params?: { sort?: string; categoryId?: number }) => {
 
 export const getEvent = (id: number) => {
   return axios
-    .get<CmsItemResponse<CmsEvent>>(`/events/${id}`, {
+    .get<CmsItemResponse<CmsEvent>>(`${CMS_ROOT}/events/${id}`, {
       params: {
         populate: 'cover, galery, event_category',
       },
@@ -34,6 +34,21 @@ export const getCategories = () => {
   return axios
     .get<CmsListResponse<CmsEventCategory>>(`${CMS_ROOT}/event-categories`, {
       params: {},
+    })
+    .then((r) => r.data);
+};
+
+export const getMyEvents = (userId: number) => {
+  const token = localStorage.getitem('events-auth');
+  return axios
+    .get<CmsListResponse<CmsEvent>>(`${CMS_ROOT}/events`, {
+      headers: {
+        Authorization: `Bearer  ${token}`,
+      },
+      params: {
+        populate: 'cover, galery, event_category',
+        'filters[creator]': userId,
+      },
     })
     .then((r) => r.data);
 };

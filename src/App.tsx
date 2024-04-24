@@ -7,6 +7,7 @@ import { EventDetails } from './pages/EventDetails';
 import { EventsPage } from './pages/EventsNew';
 import { IndexPage } from './pages/IndexPage';
 import { RegisterPage } from './pages/Register';
+import { MyEvents } from './pages/cabinet/MyEvents';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
         element: <IndexPage />,
       },
       {
+        path: '/events/details/:id',
+        element: <EventDetails />,
+      },
+      {
         path: '/events/:type',
         element: <EventsPage />,
       },
@@ -26,8 +31,8 @@ const router = createBrowserRouter([
         element: <CategoriesPage />,
       },
       {
-        path: '/events/details/:id',
-        element: <EventDetails />,
+        path: '/cabinet/events',
+        element: <MyEvents />,
       },
     ],
   },
