@@ -46,6 +46,13 @@ export interface CmsEventCategory {
   };
 }
 
+export interface CmsCreateEventRequest {
+  title: string;
+  description: string;
+  cover: number;
+  event_category: number;
+}
+
 // export interface CmsimageFormat {
 //     [key: string]: {
 //         ext: ".jpg",

@@ -38,7 +38,7 @@ export const getCategories = () => {
     .then((r) => r.data);
 };
 
-export const getMyEvents = (userId: number) => {
+export const getMyEvents = () => {
   const token = localStorage.getitem('events-auth');
   return axios
     .get<CmsListResponse<CmsEvent>>(`${CMS_ROOT}/events`, {
@@ -47,7 +47,7 @@ export const getMyEvents = (userId: number) => {
       },
       params: {
         populate: 'cover, galery, event_category',
-        'filters[creator]': userId,
+        // 'filters [$and] [0] [creator][id][$eq]': userId,
       },
     })
     .then((r) => r.data);
