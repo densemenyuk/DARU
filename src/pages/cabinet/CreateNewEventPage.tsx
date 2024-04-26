@@ -20,6 +20,8 @@ export const CreateNewEventPage = () => {
     });
   }, []);
 
+  console.log(formData);
+
   return (
     <Container>
       <FormGroup>

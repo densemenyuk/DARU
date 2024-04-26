@@ -7,6 +7,7 @@ import { EventDetails } from './pages/EventDetails';
 import { EventsPage } from './pages/EventsNew';
 import { IndexPage } from './pages/IndexPage';
 import { RegisterPage } from './pages/Register';
+import { CreateNewEventPage } from './pages/cabinet/CreateNewEventPage';
 import { MyEvents } from './pages/cabinet/MyEvents';
 
 const router = createBrowserRouter([
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: '/cabinet/events',
         element: <MyEvents />,
+      },
+      {
+        path: '/cabinet/events/create',
+        element: <CreateNewEventPage />,
       },
     ],
   },
