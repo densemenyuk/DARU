@@ -1,7 +1,9 @@
 import axios from 'axios';
 import {
+  CmsCreateEventRequest,
   CmsEvent,
   CmsEventCategory,
+  CmsImage,
   CmsItemResponse,
   CmsListResponse,
 } from '../types/events';
@@ -53,4 +55,30 @@ export const getMyEvents = () => {
     .then((r) => r.data);
 };
 
-export const createEvent = () => {};
+export const uploadFile = (formData: FormData) => {
+  const token = localStorage.getItem('events-auth');
+  return axios
+    .post<CmsImage['attributes'][]>(`${CMS_ROOT}/upload`, formData, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then((r) => r.data);
+};
+
+export const createEvent = (data: CmsCreateEventRequest) => {
+  const token = localStorage.getItem('events-auth');
+  return axios
+    .post<CmsItemResponse<CmsEvent>>(
+      `${CMS_ROOT}/events/`,
+      {
+        data,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    )
+    .then((r) => r.data);
+};

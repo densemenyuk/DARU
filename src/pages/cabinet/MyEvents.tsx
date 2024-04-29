@@ -5,14 +5,10 @@ import { Events } from '../../components/events/Events';
 import { useAuth } from '../../hooks/useAuth';
 import { getMyEvents } from '../../services/events';
 import { CmsEvent } from '../../types/events';
-<link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/icon?family=Material+Icons"
-/>;
 
 export const MyEvents = () => {
   const [events, setEvents] = useState<CmsEvent[]>([]);
-  //   const navigate = useNavigate();
+
   const { userId } = useAuth();
 
   useEffect(() => {

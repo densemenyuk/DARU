@@ -49,8 +49,9 @@ export interface CmsEventCategory {
 export interface CmsCreateEventRequest {
   title: string;
   description: string;
-  cover: number;
-  event_category: number;
+  cover: number | null;
+  event_category: number | null;
+  creator: number;
 }
 
 // export interface CmsimageFormat {
