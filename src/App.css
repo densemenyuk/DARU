@@ -5,3 +5,10 @@
 a {
   text-decoration: none;
 }
+
+.MuiBox-root {
+  @media (max-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

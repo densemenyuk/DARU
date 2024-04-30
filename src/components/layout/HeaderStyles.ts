@@ -22,3 +22,10 @@ export const H1 = styled('div')`
 export const MuiAppBar = styled('div')`
   color: black;
 `;
+
+export const StyledMenuItem = styled('div')`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 150px;
+`;

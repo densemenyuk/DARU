@@ -29,7 +29,7 @@ export const CategoriesPage = () => {
 
   return (
     <Container>
-      <Box display={'flex'} gap={'16px'}>
+      <Box display={'flex'} gap={'8px'} justifyContent={'center'}>
         {categories.map((item) => (
           <Chip
             key={item.id}

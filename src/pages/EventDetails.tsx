@@ -41,7 +41,7 @@ const ImageContainer = styled('div')<{
   justify-content: center;
 
   & > img {
-    width: 450px;
+    width: 400px;
     max-width: ${(props) => (props.fullWidth ? '100%' : '400px')};
   }
 `;

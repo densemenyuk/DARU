@@ -6,7 +6,7 @@ import {
   styled,
 } from '@mui/material';
 import { FormEvent, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 import { registerUser } from '../services/auth';
 import { RegisterRequest } from '../types/auth';
@@ -30,7 +30,7 @@ export const RegisterPage = () => {
 
   return (
     <Container>
-      <StyledDivTittle>Welcome!</StyledDivTittle>
+      <StyledDivTittle sx={{ textAlign: 'center' }}>Welcome!</StyledDivTittle>
       <StyledForm onSubmit={handleSubmit}>
         <FormGroup>
           <TextField
@@ -62,8 +62,12 @@ export const RegisterPage = () => {
             }}
           />
         </FormGroup>
-        <Button type="submit" variant="contained" sx={{ color: '#FF4500	' }}>
-          Register
+        <Button
+          type="submit"
+          variant="contained"
+          sx={{ background: '#FF4500' }}
+        >
+          <Link to={'/cabinet/events'}>Register</Link>
         </Button>
       </StyledForm>
     </Container>
