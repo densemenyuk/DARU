@@ -97,8 +97,8 @@ export const Header: FC = () => {
   }
 
   return (
-    <MuiAppBar position="static">
-      <Container maxWidth="xl" sx={{ backgroundColor: '#FF4500' }}>
+    <MuiAppBar sx={{ backgroundColor: '#FF4500', position: 'static' }}>
+      <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
             variant="h6"
@@ -232,7 +232,7 @@ export const Header: FC = () => {
               </Menu>
             </div>
           ) : (
-            <Link to="/auth/login">Войти</Link>
+            <Link to="/auth/login">Sign In</Link>
           )}
         </Toolbar>
       </Container>

@@ -66,10 +66,13 @@ export const LoginPage = () => {
         </FormGroup>
         <Button
           type="submit"
-          variant="contained"
+          // variant="contained"
           sx={{ background: '#FF4500' }}
         >
           <Link to={'/'}>Login</Link>
+        </Button>
+        <Button sx={{marginLeft: '260px', variant: "contained",background: '#FF4500'  }}>
+          <Link to={'/auth/register'}>Create new account</Link>
         </Button>
       </StyledForm>
     </Container>

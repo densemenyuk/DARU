@@ -22,7 +22,7 @@ export const EventDetails = () => {
 
   return (
     <Container>
-      <Typography variant="h2">{event?.attributes.title} </Typography>
+      <Typography variant="h3">{event?.attributes.title} </Typography>
       {/* <Typography>Голосов: {event?.attributes.votes ?? 0}</Typography> */}
       <Box mt={'24px'}>
         <ImageContainer fullWidth>
