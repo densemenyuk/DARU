@@ -16,6 +16,7 @@ import {
 import { FC, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
+import { StyledLink } from '../../pages/Login';
 import { H1, Nav, StyledMenuItem } from './HeaderStyles';
 
 // Cтиль поисковика
@@ -226,13 +227,13 @@ export const Header: FC = () => {
                   {username}
                 </Typography>
                 <MenuItem onClick={handleClose}>
-                  <Link to="/cabinet/events">Кабинет</Link>
+                  <StyledLink to="/cabinet/events">Cabinet</StyledLink>
                 </MenuItem>
-                <MenuItem onClick={handleLogout}>Выйти</MenuItem>
+                <MenuItem onClick={handleLogout}>Log Out</MenuItem>
               </Menu>
             </div>
           ) : (
-            <Link to="/auth/login">Sign In</Link>
+            <StyledLink to="/auth/login">LOGIN</StyledLink>
           )}
         </Toolbar>
       </Container>

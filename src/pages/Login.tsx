@@ -47,7 +47,7 @@ export const LoginPage = () => {
             type="text"
             placeholder="Email"
             {...register('identifier', {
-              required: 'Введите ваш email',
+              required: 'Enter your email',
             })}
             error={Boolean(errors.identifier)}
             helperText={errors.identifier?.message}
@@ -58,7 +58,7 @@ export const LoginPage = () => {
             type="password"
             placeholder="Password"
             {...register('password', {
-              required: 'Введите ваш пароль',
+              required: 'Enter your password',
             })}
             error={Boolean(errors.password)}
             helperText={errors.password?.message}
@@ -66,13 +66,21 @@ export const LoginPage = () => {
         </FormGroup>
         <Button
           type="submit"
-          // variant="contained"
-          sx={{ background: '#FF4500' }}
+          //   variant="outlined"
+          sx={{ background: '#FF4500', color: '#213547' }}
         >
-          <Link to={'/'}>Login</Link>
+          Login
         </Button>
-        <Button sx={{marginLeft: '260px', variant: "contained",background: '#FF4500'  }}>
-          <Link to={'/auth/register'}>Create new account</Link>
+        <Button
+          sx={{
+            marginLeft: '260px',
+            // variant: 'outlined',
+            background: '#FF4500',
+            color: 'black',
+            textDecoration: 'none',
+          }}
+        >
+          <StyledLink to={'/auth/register'}>Create new account</StyledLink>
         </Button>
       </StyledForm>
     </Container>
@@ -86,4 +94,10 @@ const StyledForm = styled('form')`
 
 const FormGroup = styled(MuiFormGroup)`
   margin-bottom: 16px;
+`;
+
+export const StyledLink = styled(Link)`
+  :hover {
+    color: #242424;
+  }
 `;
