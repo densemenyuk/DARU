@@ -6,10 +6,11 @@ import {
   styled,
 } from '@mui/material';
 import { FormEvent, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 import { registerUser } from '../services/auth';
 import { RegisterRequest } from '../types/auth';
+import { StyledLink } from './Login';
 
 export const RegisterPage = () => {
   const { login } = useAuth();
@@ -63,11 +64,15 @@ export const RegisterPage = () => {
           />
         </FormGroup>
         <Button
-          type="submit"
-          variant="contained"
-          sx={{ background: '#FF4500' }}
+          sx={{
+            // marginLeft: '260px',
+            // variant: 'outlined',
+            background: '#FF4500',
+            color: 'black',
+            textDecoration: 'none',
+          }}
         >
-          <Link to={'/cabinet/events'}>Register</Link>
+          <StyledLink to={'/auth/login'}>Register</StyledLink>
         </Button>
       </StyledForm>
     </Container>

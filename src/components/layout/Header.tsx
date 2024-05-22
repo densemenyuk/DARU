@@ -108,7 +108,9 @@ export const Header: FC = () => {
             href="#app-bar-with-responsive-menu"
             sx={{ display: { xs: 'flex', md: 'none' } }}
           >
-            EventsHub
+            <Link to="/">
+              <H1>EventsHub</H1>
+            </Link>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
