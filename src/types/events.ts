@@ -27,11 +27,17 @@ export interface CmsEvent {
     publishedAt: string;
     votes: string;
     item: string;
+    // creator: number;
     event_category: {
       data: CmsEventCategory;
     };
     cover: {
       data: CmsImage;
+    };
+    creator: {
+      data: {
+        id: number;
+      };
     };
   };
 }
@@ -72,6 +78,7 @@ export interface CmsCreateEventRequest {
 export interface CmsImage {
   id: number;
   attributes: {
+    id: number;
     name: string;
     width: number;
     height: number;

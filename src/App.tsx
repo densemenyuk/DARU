@@ -9,6 +9,7 @@ import { IndexPage } from './pages/IndexPage';
 import { LoginPage } from './pages/Login';
 import { RegisterPage } from './pages/Register';
 import { CreateNewEventPage } from './pages/cabinet/CreateNewEventPage';
+import { EditMyEventsPage } from './pages/cabinet/EditMyEventsPage';
 import { MyEvents } from './pages/cabinet/MyEvents';
 
 const router = createBrowserRouter([
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: '/cabinet/events/create',
         element: <CreateNewEventPage />,
+      },
+      {
+        path: '/cabinet/events/edit/:id',
+        element: <EditMyEventsPage />,
       },
     ],
   },
